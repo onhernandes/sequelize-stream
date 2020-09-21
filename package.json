@@ -4,7 +4,12 @@
   "description": "Stream data directly from your DB using your Sequelize's models",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --no-cache"
+    "test": "./node_modules/.bin/jest --no-cache",
+    "tdd": "./node_modules/.bin/jest --watch --no-cache",
+    "docs": "./node_modules/.bin/esdoc",
+    "lint": "./node_modules/.bin/eslint",
+    "publish-docs": "./node_modules/.bin/esdoc && git subtree push --prefix docs origin gh-pages",
+    "tarfile": "tar -czvf parserblade.tar.gz LICENSE package* README.md src"
   },
   "repository": {
     "type": "git",
@@ -37,7 +42,10 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^26.4.2",
-    "mysql2": "^2.2.1"
+    "esdoc": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-inject-style-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0"
   },
   "dependencies": {
     "sequelize": "^6.3.5"

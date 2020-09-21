@@ -13,17 +13,21 @@ module.exports = function stream (options = {}) {
   return new Readable({
     objectMode: true,
     read () {
-      if (items.length) {
-        const item = items.shift()
-        this.push(item)
-        return
+      const push = () => {
+        const toPush = items.shift()
+        this.push(toPush || null)
       }
 
-      findAll(options)
-        .then(results => {
-          items = results
-          offset = offset + limit
-        })
+      if (items.length > 0) {
+        push()
+      } else {
+        findAll(options)
+          .then(results => {
+            items = results
+            offset = offset + limit
+            push()
+          })
+      }
     }
   })
 }
