@@ -1,6 +1,6 @@
 {
   "name": "sequelize-model-stream",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Stream data directly from your DB using your Sequelize's models",
   "main": "src/index.js",
   "scripts": {
@@ -38,9 +38,11 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^4"
   },
-  "dependencies": {
-    "sequelize": "^6.3.5"
+  "peerDependencies": {
+    "sequelize": "^4"
   }
 }

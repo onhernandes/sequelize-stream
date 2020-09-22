@@ -12,7 +12,7 @@ npm install sequelize-model-stream
 
 First, you've to initialize, passing your Sequelize's instance, so all defined models will have `.stream()` method:
 
-```
+```javascript
 const Sequelize = require('sequelize')
 const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })
@@ -29,7 +29,7 @@ User
 
 ...or simply pass your model:
 
-```
+```javascript
 const Sequelize = require('sequelize')
 const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })
@@ -51,7 +51,7 @@ User
 
 `stream()` is simply a workaround for `Model.findAll()`, so you can filter and do everything you would do using directly `Model.findAll()`
 
-```
+```javascript
 const Sequelize = require('sequelize')
 const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })
@@ -70,7 +70,7 @@ User
 
 Since `stream()` is simply a workaround for `Model.findAll()`, the default limit is 100. If you want to fetch more or less for each call, just set `{ limit: 5 }`
 
-```
+```javascript
 const Sequelize = require('sequelize')
 const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })

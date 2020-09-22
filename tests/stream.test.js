@@ -1,5 +1,6 @@
 const setMethod = require('../src/setMethod')
 const Sequelize = require('sequelize')
+const Op = require('sequelize').Op
 const instance = new Sequelize({
   dialect: 'mysql'
 })
@@ -61,7 +62,11 @@ describe('stream()', () => {
     ]
     const mockFindAll = jest.fn()
     const query = {
-      where: { name: 'Rodolfo' }
+      where: {
+        nome: {
+          [Op.eq]: 'Francisco'
+        }
+      }
     }
     let calledWhere
     User.findAll = async ({ where }) => {
