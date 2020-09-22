@@ -1,11 +1,11 @@
-# sequelize-stream
+# sequelize-model-stream
 
 Stream dada from your DB using Sequelize!
 
 ## Install
 
 ```sh
-npm install sequelize-stream
+npm install sequelize-model-stream
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ First, you've to initialize, passing your Sequelize's instance, so all defined m
 
 ```
 const Sequelize = require('sequelize')
-const SequelizeStream = require('sequelize-stream')
+const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })
 
 const User = instance.define('user', { name: Sequelize.STRING })
@@ -31,7 +31,7 @@ User
 
 ```
 const Sequelize = require('sequelize')
-const SequelizeStream = require('sequelize-stream')
+const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })
 
 const User = instance.define('user', { name: Sequelize.STRING })
@@ -53,7 +53,7 @@ User
 
 ```
 const Sequelize = require('sequelize')
-const SequelizeStream = require('sequelize-stream')
+const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })
 
 const User = instance.define('user', { name: Sequelize.STRING })
@@ -72,7 +72,7 @@ Since `stream()` is simply a workaround for `Model.findAll()`, the default limit
 
 ```
 const Sequelize = require('sequelize')
-const SequelizeStream = require('sequelize-stream')
+const SequelizeStream = require('sequelize-model-stream')
 const instance = new Sequelize({ dialect: 'mysql' })
 
 const User = instance.define('user', { name: Sequelize.STRING })
